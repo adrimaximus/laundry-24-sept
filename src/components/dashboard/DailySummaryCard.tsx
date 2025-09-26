@@ -1,4 +1,4 @@
-"use client";
+use client;
 import React from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ClipboardList, DollarSign, Package, Ruler } from "lucide-react";
@@ -51,7 +51,6 @@ const DailySummaryCard: React.FC<DailySummaryCardProps> = ({
         </div>
       </CardContent>
     </Card>);
-
 };
 
 export default DailySummaryCard;
