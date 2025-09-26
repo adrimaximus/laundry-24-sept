@@ -1,3 +1,5 @@
+use client;
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -10,7 +12,7 @@ interface ActionButtonsGridProps {
 const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }) => {
   return (
     <div className="grid grid-cols-2 gap-4">
-      <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-yellow-500 text-white hover:bg-yellow-600">
+      <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-purple-500 text-white hover:bg-purple-600">
         <Link to="/orders/new" onClick={onAddOrderClick}>
           <Plus className="h-6 w-6 mb-1" />
           Tambah Pesanan
@@ -35,7 +37,6 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
         </Link>
       </Button>
     </div>);
-
 };
 
 export default ActionButtonsGrid;
