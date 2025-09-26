@@ -30,7 +30,7 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
           Laporan
         </Link>
       </Button>
-      <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-white border border-gray-300 text-gray-800 hover:bg-gray-50">
+      <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-pink-500 text-white hover:bg-pink-600">
         <Link to="/settings">
           <Settings className="h-6 w-6 mb-1" />
           Pengaturan
