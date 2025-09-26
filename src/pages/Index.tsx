@@ -30,8 +30,8 @@ const IndexPage = () => {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <TopSellingProductsCard />
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default IndexPage;

@@ -7,16 +7,16 @@ import {
   TableRow,
   TableHead,
   TableBody,
-  TableCell,
-} from "@/components/ui/table";
+  TableCell } from
+"@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  SelectValue } from
+"@/components/ui/select";
 
 // Definisi tipe untuk pesanan
 type Order = {
@@ -40,7 +40,7 @@ type OrderTableProps = {
 
 const OrderTable: React.FC<OrderTableProps> = ({
   orders,
-  onUpdateOrderStatus,
+  onUpdateOrderStatus
 }) => {
   const getStatusVariant = (status: string) => {
     switch (status) {
@@ -74,8 +74,8 @@ const OrderTable: React.FC<OrderTableProps> = ({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {orders.map((order) => (
-          <TableRow key={order.id}>
+        {orders.map((order) =>
+        <TableRow key={order.id}>
             <TableCell className="font-medium">{order.id}</TableCell>
             <TableCell>{order.customer}</TableCell>
             <TableCell>{order.service}</TableCell>
@@ -95,11 +95,11 @@ const OrderTable: React.FC<OrderTableProps> = ({
             <TableCell className="text-right">{order.date}</TableCell>
             <TableCell className="text-right">
               <Select
-                value={order.status}
-                onValueChange={(newStatus: Order["status"]) =>
-                  onUpdateOrderStatus(order.id, newStatus)
-                }
-              >
+              value={order.status}
+              onValueChange={(newStatus: Order["status"]) =>
+              onUpdateOrderStatus(order.id, newStatus)
+              }>
+
                 <SelectTrigger className="w-[140px]">
                   <SelectValue placeholder="Ubah Status" />
                 </SelectTrigger>
@@ -111,10 +111,10 @@ const OrderTable: React.FC<OrderTableProps> = ({
               </Select>
             </TableCell>
           </TableRow>
-        ))}
+        )}
       </TableBody>
-    </Table>
-  );
+    </Table>);
+
 };
 
 export default OrderTable;

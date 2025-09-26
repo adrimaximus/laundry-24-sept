@@ -19,8 +19,8 @@ const HelpCard = () => {
         </CardDescription>
         <Button className="w-full">Hubungi Dukungan</Button>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default HelpCard;

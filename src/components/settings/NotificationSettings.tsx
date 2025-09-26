@@ -26,8 +26,8 @@ const NotificationSettings: React.FC = () => {
           <Switch id="pickup-reminders" defaultChecked />
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default NotificationSettings;

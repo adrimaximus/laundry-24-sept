@@ -5,9 +5,9 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
-}
-from "@/components/ui/card";
+  CardDescription } from
+
+"@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -15,9 +15,9 @@ import {
   TableRow,
   TableHead,
   TableBody,
-  TableCell,
-}
-from "@/components/ui/table";
+  TableCell } from
+
+"@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { WashingMachine } from "lucide-react";
 import {
@@ -26,9 +26,9 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-}
-from "@/components/ui/dialog";
+  DialogTrigger } from
+
+"@/components/ui/dialog";
 import CreateOrderForm from "@/components/CreateOrderForm";
 
 // Import komponen dashboard baru
@@ -55,72 +55,72 @@ type Order = {
 
 // Contoh data pesanan awal
 const initialOrders: Order[] = [
-  {
-    id: "ORD001",
-    customer: "Budi Santoso",
-    service: "Cuci Kering",
-    status: "Pending",
-    weight: 3,
-    price: 15000,
-    date: "2023-10-26",
-    paymentMethod: "QRIS",
-    orderType: "Pickup",
-    location: "Jl. Merdeka No. 10",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD002",
-    customer: "Siti Aminah",
-    service: "Cuci Setrika",
-    status: "In Progress",
-    weight: 5,
-    price: 30000,
-    date: "2023-10-25",
-    paymentMethod: "Debit",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD003",
-    customer: "Joko Susilo",
-    service: "Setrika Saja",
-    status: "Pending",
-    weight: 2,
-    price: 10000,
-    date: "2023-10-26",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Perumahan Indah Blok C-5",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD004",
-    customer: "Dewi Lestari",
-    service: "Cuci Kering",
-    status: "Completed",
-    weight: 4,
-    price: 20000,
-    date: "2023-10-27",
-    paymentMethod: "QRIS",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD007",
-    customer: "Fajar Nugraha",
-    service: "Cuci Satuan",
-    status: "Pending",
-    weight: 0.5,
-    price: 25000,
-    date: "2023-10-28",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Jl. Mawar No. 5",
-    clothingType: "Gaun Pesta",
-  },
-];
+{
+  id: "ORD001",
+  customer: "Budi Santoso",
+  service: "Cuci Kering",
+  status: "Pending",
+  weight: 3,
+  price: 15000,
+  date: "2023-10-26",
+  paymentMethod: "QRIS",
+  orderType: "Pickup",
+  location: "Jl. Merdeka No. 10",
+  clothingType: undefined
+},
+{
+  id: "ORD002",
+  customer: "Siti Aminah",
+  service: "Cuci Setrika",
+  status: "In Progress",
+  weight: 5,
+  price: 30000,
+  date: "2023-10-25",
+  paymentMethod: "Debit",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD003",
+  customer: "Joko Susilo",
+  service: "Setrika Saja",
+  status: "Pending",
+  weight: 2,
+  price: 10000,
+  date: "2023-10-26",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Perumahan Indah Blok C-5",
+  clothingType: undefined
+},
+{
+  id: "ORD004",
+  customer: "Dewi Lestari",
+  service: "Cuci Kering",
+  status: "Completed",
+  weight: 4,
+  price: 20000,
+  date: "2023-10-27",
+  paymentMethod: "QRIS",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD007",
+  customer: "Fajar Nugraha",
+  service: "Cuci Satuan",
+  status: "Pending",
+  weight: 0.5,
+  price: 25000,
+  date: "2023-10-28",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Jl. Mawar No. 5",
+  clothingType: "Gaun Pesta"
+}];
+
 
 const LaundryDashboard = () => {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
@@ -146,7 +146,7 @@ const LaundryDashboard = () => {
   // Calculate summary data for DailySummaryCard
   const totalRevenue = orders.reduce((sum, order) => sum + order.price, 0);
   const totalWeight = orders.reduce((sum, order) => sum + order.weight, 0);
-  const totalPcs = orders.filter(order => order.service === "Cuci Satuan").length;
+  const totalPcs = orders.filter((order) => order.service === "Cuci Satuan").length;
   const totalMeters = 0;
 
   return (
@@ -166,7 +166,7 @@ const LaundryDashboard = () => {
         {/* Wrapper untuk membatasi lebar konten */}
         <div className="max-w-4xl mx-auto w-full">
           <header className="sticky top-0 z-30 flex h-14 items-center justify-center border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-            <h1 className="text-7xl font-bold flex items-center gap-2">
+            <h1 className="text-7xl font-bold flex items-center gap-2 text-green-500">
               <WashingMachine className="h-16 w-16 text-yellow-500" />
               BetterLaundry
             </h1>
@@ -180,8 +180,8 @@ const LaundryDashboard = () => {
               totalOrders={orders.length}
               totalWeight={totalWeight}
               totalPcs={totalPcs}
-              totalMeters={totalMeters}
-            />
+              totalMeters={totalMeters} />
+
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
                 <ActionButtonsGrid onAddOrderClick={() => setIsDialogOpen(true)} />
@@ -195,15 +195,15 @@ const LaundryDashboard = () => {
                 </DialogHeader>
                 <CreateOrderForm
                   onOrderCreated={handleOrderCreated}
-                  onClose={() => setIsDialogOpen(false)}
-                />
+                  onClose={() => setIsDialogOpen(false)} />
+
               </DialogContent>
             </Dialog>
             <HelpCard />
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 export default LaundryDashboard;

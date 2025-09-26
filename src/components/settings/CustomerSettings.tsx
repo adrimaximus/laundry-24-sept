@@ -24,8 +24,8 @@ const CustomerSettings: React.FC = () => {
         </div>
         <Button className="w-full">Simpan Perubahan</Button>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default CustomerSettings;

@@ -7,8 +7,8 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-  CardDescription,
-} from "@/components/ui/card";
+  CardDescription } from
+"@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Settings } from "lucide-react";
 import {
@@ -17,8 +17,8 @@ import {
   TableRow,
   TableHead,
   TableBody,
-  TableCell,
-} from "@/components/ui/table";
+  TableCell } from
+"@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
 // Definisi tipe untuk pesanan (konsisten dengan OrderTable)
@@ -38,72 +38,72 @@ type Order = {
 
 // Contoh data pesanan awal (sama dengan LaundryDashboard untuk konsistensi)
 const initialOrders: Order[] = [
-  {
-    id: "ORD001",
-    customer: "Budi Santoso",
-    service: "Cuci Kering",
-    status: "Pending",
-    weight: 3,
-    price: 15000,
-    date: "2023-10-26",
-    paymentMethod: "QRIS",
-    orderType: "Pickup",
-    location: "Jl. Merdeka No. 10",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD002",
-    customer: "Siti Aminah",
-    service: "Cuci Setrika",
-    status: "In Progress",
-    weight: 5,
-    price: 30000,
-    date: "2023-10-25",
-    paymentMethod: "Debit",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD003",
-    customer: "Joko Susilo",
-    service: "Setrika Saja",
-    status: "Pending",
-    weight: 2,
-    price: 10000,
-    date: "2023-10-26",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Perumahan Indah Blok C-5",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD004",
-    customer: "Dewi Lestari",
-    service: "Cuci Kering",
-    status: "Completed",
-    weight: 4,
-    price: 20000,
-    date: "2023-10-27",
-    paymentMethod: "QRIS",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD007",
-    customer: "Fajar Nugraha",
-    service: "Cuci Satuan",
-    status: "Pending",
-    weight: 0.5,
-    price: 25000,
-    date: "2023-10-28",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Jl. Mawar No. 5",
-    clothingType: "Gaun Pesta",
-  },
-];
+{
+  id: "ORD001",
+  customer: "Budi Santoso",
+  service: "Cuci Kering",
+  status: "Pending",
+  weight: 3,
+  price: 15000,
+  date: "2023-10-26",
+  paymentMethod: "QRIS",
+  orderType: "Pickup",
+  location: "Jl. Merdeka No. 10",
+  clothingType: undefined
+},
+{
+  id: "ORD002",
+  customer: "Siti Aminah",
+  service: "Cuci Setrika",
+  status: "In Progress",
+  weight: 5,
+  price: 30000,
+  date: "2023-10-25",
+  paymentMethod: "Debit",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD003",
+  customer: "Joko Susilo",
+  service: "Setrika Saja",
+  status: "Pending",
+  weight: 2,
+  price: 10000,
+  date: "2023-10-26",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Perumahan Indah Blok C-5",
+  clothingType: undefined
+},
+{
+  id: "ORD004",
+  customer: "Dewi Lestari",
+  service: "Cuci Kering",
+  status: "Completed",
+  weight: 4,
+  price: 20000,
+  date: "2023-10-27",
+  paymentMethod: "QRIS",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD007",
+  customer: "Fajar Nugraha",
+  service: "Cuci Satuan",
+  status: "Pending",
+  weight: 0.5,
+  price: 25000,
+  date: "2023-10-28",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Jl. Mawar No. 5",
+  clothingType: "Gaun Pesta"
+}];
+
 
 const HistoryPage = () => {
   const navigate = useNavigate();
@@ -129,8 +129,8 @@ const HistoryPage = () => {
             variant="outline"
             size="icon"
             className="h-8 w-8"
-            onClick={() => navigate(-1)}
-          >
+            onClick={() => navigate(-1)}>
+
             <ChevronLeft className="h-4 w-4" />
             <span className="sr-only">Kembali</span>
           </Button>
@@ -172,8 +172,8 @@ const HistoryPage = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {initialOrders.map((order) => (
-                    <TableRow key={order.id}>
+                  {initialOrders.map((order) =>
+                  <TableRow key={order.id}>
                       <TableCell className="font-medium">
                         {order.id}
                       </TableCell>
@@ -188,9 +188,9 @@ const HistoryPage = () => {
                       <TableCell>{order.paymentMethod}</TableCell>
                       <TableCell>{order.orderType}</TableCell>
                       <TableCell>
-                        {order.orderType === "Pickup" && order.location
-                          ? "Tersamar"
-                          : order.location || "-"}
+                        {order.orderType === "Pickup" && order.location ?
+                      "Tersamar" :
+                      order.location || "-"}
                       </TableCell>
                       <TableCell className="text-right">
                         {order.weight}
@@ -202,15 +202,15 @@ const HistoryPage = () => {
                         {order.date}
                       </TableCell>
                     </TableRow>
-                  ))}
+                  )}
                 </TableBody>
               </Table>
             </CardContent>
           </Card>
         </main>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default HistoryPage;

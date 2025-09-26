@@ -18,8 +18,8 @@ function App() {
         <Route path="/settings" element={<SettingsPage />} /> {/* Rute untuk halaman pengaturan */}
         {/* Tambahkan rute lain di sini jika diperlukan */}
       </Routes>
-    </Router>
-  );
+    </Router>);
+
 }
 
 export default App;

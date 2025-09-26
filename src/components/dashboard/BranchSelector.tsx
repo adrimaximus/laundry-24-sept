@@ -6,8 +6,8 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  SelectValue } from
+"@/components/ui/select";
 import { MapPin } from "lucide-react";
 
 const BranchSelector = () => {
@@ -31,8 +31,8 @@ const BranchSelector = () => {
           </SelectContent>
         </Select>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default BranchSelector;

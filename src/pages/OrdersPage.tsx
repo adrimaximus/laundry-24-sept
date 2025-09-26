@@ -5,16 +5,16 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+  CardDescription } from
+"@/components/ui/card";
 import {
   Table,
   TableHeader,
   TableRow,
   TableHead,
   TableBody,
-  TableCell,
-} from "@/components/ui/table";
+  TableCell } from
+"@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -37,72 +37,72 @@ type Order = {
 
 // Contoh data pesanan awal
 const initialOrders: Order[] = [
-  {
-    id: "ORD001",
-    customer: "Budi Santoso",
-    service: "Cuci Kering",
-    status: "Pending",
-    weight: 3,
-    price: 15000,
-    date: "2023-10-26",
-    paymentMethod: "QRIS",
-    orderType: "Pickup",
-    location: "Jl. Merdeka No. 10",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD002",
-    customer: "Siti Aminah",
-    service: "Cuci Setrika",
-    status: "In Progress",
-    weight: 5,
-    price: 30000,
-    date: "2023-10-25",
-    paymentMethod: "Debit",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD003",
-    customer: "Joko Susilo",
-    service: "Setrika Saja",
-    status: "Pending",
-    weight: 2,
-    price: 10000,
-    date: "2023-10-26",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Perumahan Indah Blok C-5",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD004",
-    customer: "Dewi Lestari",
-    service: "Cuci Kering",
-    status: "Completed",
-    weight: 4,
-    price: 20000,
-    date: "2023-10-27",
-    paymentMethod: "QRIS",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD007",
-    customer: "Fajar Nugraha",
-    service: "Cuci Satuan",
-    status: "Pending",
-    weight: 0.5,
-    price: 25000,
-    date: "2023-10-28",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Jl. Mawar No. 5",
-    clothingType: "Gaun Pesta",
-  },
-];
+{
+  id: "ORD001",
+  customer: "Budi Santoso",
+  service: "Cuci Kering",
+  status: "Pending",
+  weight: 3,
+  price: 15000,
+  date: "2023-10-26",
+  paymentMethod: "QRIS",
+  orderType: "Pickup",
+  location: "Jl. Merdeka No. 10",
+  clothingType: undefined
+},
+{
+  id: "ORD002",
+  customer: "Siti Aminah",
+  service: "Cuci Setrika",
+  status: "In Progress",
+  weight: 5,
+  price: 30000,
+  date: "2023-10-25",
+  paymentMethod: "Debit",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD003",
+  customer: "Joko Susilo",
+  service: "Setrika Saja",
+  status: "Pending",
+  weight: 2,
+  price: 10000,
+  date: "2023-10-26",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Perumahan Indah Blok C-5",
+  clothingType: undefined
+},
+{
+  id: "ORD004",
+  customer: "Dewi Lestari",
+  service: "Cuci Kering",
+  status: "Completed",
+  weight: 4,
+  price: 20000,
+  date: "2023-10-27",
+  paymentMethod: "QRIS",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD007",
+  customer: "Fajar Nugraha",
+  service: "Cuci Satuan",
+  status: "Pending",
+  weight: 0.5,
+  price: 25000,
+  date: "2023-10-28",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Jl. Mawar No. 5",
+  clothingType: "Gaun Pesta"
+}];
+
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
@@ -128,8 +128,8 @@ const OrdersPage = () => {
           <Button
             variant="outline"
             onClick={() => navigate(-1)}
-            className="mb-4 flex items-center gap-2"
-          >
+            className="mb-4 flex items-center gap-2">
+
             <ArrowLeft className="h-4 w-4" /> Kembali ke Dashboard
           </Button>
 
@@ -157,8 +157,8 @@ const OrdersPage = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {orders.map((order) => (
-                  <TableRow key={order.id}>
+                {orders.map((order) =>
+                <TableRow key={order.id}>
                     <TableCell className="font-medium">{order.id}</TableCell>
                     <TableCell>{order.customer}</TableCell>
                     <TableCell>{order.service}</TableCell>
@@ -171,9 +171,9 @@ const OrdersPage = () => {
                     <TableCell>{order.paymentMethod}</TableCell>
                     <TableCell>{order.orderType}</TableCell>
                     <TableCell>
-                      {order.orderType === "Pickup" && order.location
-                        ? "Tersamar"
-                        : order.location || "-"}
+                      {order.orderType === "Pickup" && order.location ?
+                    "Tersamar" :
+                    order.location || "-"}
                     </TableCell>
                     <TableCell className="text-right">
                       {order.weight}
@@ -183,14 +183,14 @@ const OrdersPage = () => {
                     </TableCell>
                     <TableCell className="text-right">{order.date}</TableCell>
                   </TableRow>
-                ))}
+                )}
               </TableBody>
             </Table>
           </Card>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default OrdersPage;

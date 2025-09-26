@@ -16,7 +16,7 @@ const DailySummaryCard: React.FC<DailySummaryCardProps> = ({
   totalOrders,
   totalWeight,
   totalPcs,
-  totalMeters,
+  totalMeters
 }) => {
   return (
     <Card className="bg-yellow-400 text-black shadow-md border border-black rounded-xl"> {/* Menambahkan rounded-xl */}
@@ -45,13 +45,13 @@ const DailySummaryCard: React.FC<DailySummaryCardProps> = ({
             <div className="text-2xl font-bold">{totalPcs} Pcs</div>
           </div>
           {/* <div className="flex items-center gap-2">
-            <Ruler className="h-4 w-4 text-muted-foreground" />
-            <div className="text-2xl font-bold">{totalMeters} Meter</div>
-          </div> */}
+              <Ruler className="h-4 w-4 text-muted-foreground" />
+              <div className="text-2xl font-bold">{totalMeters} Meter</div>
+             </div> */}
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default DailySummaryCard;

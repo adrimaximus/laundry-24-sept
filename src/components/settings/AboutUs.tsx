@@ -28,8 +28,8 @@ const AboutUs: React.FC = () => {
           <Textarea
             id="description"
             defaultValue="BetterLaundry adalah aplikasi manajemen laundry yang dirancang untuk memudahkan pemilik bisnis laundry dalam mengelola pesanan, pelanggan, dan operasional sehari-hari."
-            rows={5}
-          />
+            rows={5} />
+
         </div>
         <div className="grid gap-2">
           <Label htmlFor="contact-email">Email Kontak</Label>
@@ -37,8 +37,8 @@ const AboutUs: React.FC = () => {
         </div>
         <Button className="w-full">Simpan Perubahan</Button>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default AboutUs;

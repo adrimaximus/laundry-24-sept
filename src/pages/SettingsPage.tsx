@@ -7,43 +7,43 @@ import { Bell, MapPin, Truck, WashingMachine, Users, Info, ChevronLeft } from 'l
 import { Button } from '@/components/ui/button'; // Import Button
 
 const settingsOptions = [
-  {
-    title: "Pengaturan Lokasi",
-    description: "Kelola informasi lokasi bisnis Anda.",
-    icon: MapPin,
-    path: "/settings/location",
-  },
-  {
-    title: "Pengaturan Notifikasi",
-    description: "Kelola preferensi notifikasi Anda.",
-    icon: Bell,
-    path: "/settings/notifications",
-  },
-  {
-    title: "Pengaturan Antar-Jemput",
-    description: "Konfigurasi layanan penjemputan dan pengiriman.",
-    icon: Truck,
-    path: "/settings/pickup-delivery",
-  },
-  {
-    title: "Pengaturan Layanan",
-    description: "Kelola jenis layanan laundry yang tersedia.",
-    icon: WashingMachine,
-    path: "/settings/services",
-  },
-  {
-    title: "Pengaturan Pelanggan",
-    description: "Kelola preferensi terkait pelanggan.",
-    icon: Users,
-    path: "/settings/customers",
-  },
-  {
-    title: "Tentang Kami",
-    description: "Informasi tentang aplikasi atau bisnis Anda.",
-    icon: Info,
-    path: "/settings/about",
-  },
-];
+{
+  title: "Pengaturan Lokasi",
+  description: "Kelola informasi lokasi bisnis Anda.",
+  icon: MapPin,
+  path: "/settings/location"
+},
+{
+  title: "Pengaturan Notifikasi",
+  description: "Kelola preferensi notifikasi Anda.",
+  icon: Bell,
+  path: "/settings/notifications"
+},
+{
+  title: "Pengaturan Antar-Jemput",
+  description: "Konfigurasi layanan penjemputan dan pengiriman.",
+  icon: Truck,
+  path: "/settings/pickup-delivery"
+},
+{
+  title: "Pengaturan Layanan",
+  description: "Kelola jenis layanan laundry yang tersedia.",
+  icon: WashingMachine,
+  path: "/settings/services"
+},
+{
+  title: "Pengaturan Pelanggan",
+  description: "Kelola preferensi terkait pelanggan.",
+  icon: Users,
+  path: "/settings/customers"
+},
+{
+  title: "Tentang Kami",
+  description: "Informasi tentang aplikasi atau bisnis Anda.",
+  icon: Info,
+  path: "/settings/about"
+}];
+
 
 const SettingsPage = () => {
   const navigate = useNavigate(); // Inisialisasi useNavigate
@@ -78,14 +78,14 @@ const SettingsPage = () => {
                       <p className="text-sm text-muted-foreground">{option.description}</p>
                     </CardContent>
                   </Card>
-                </Link>
-              );
+                </Link>);
+
             })}
           </div>
         </main>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default SettingsPage;

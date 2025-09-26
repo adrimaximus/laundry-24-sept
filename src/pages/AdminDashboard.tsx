@@ -7,8 +7,8 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-  CardDescription,
-} from "@/components/ui/card";
+  CardDescription } from
+"@/components/ui/card";
 import OrderTable from "@/components/OrderTable";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -31,98 +31,98 @@ type Order = {
 
 // Contoh data pesanan awal (sama dengan LaundryDashboard untuk konsistensi)
 const initialOrders: Order[] = [
-  {
-    id: "ORD001",
-    customer: "Budi Santoso",
-    service: "Cuci Kering",
-    status: "Pending",
-    weight: 3,
-    price: 15000,
-    date: "2023-10-26",
-    paymentMethod: "QRIS",
-    orderType: "Pickup",
-    location: "Jl. Merdeka No. 10",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD002",
-    customer: "Siti Aminah",
-    service: "Cuci Setrika",
-    status: "In Progress",
-    weight: 5,
-    price: 30000,
-    date: "2023-10-25",
-    paymentMethod: "Debit",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD003",
-    customer: "Joko Susilo",
-    service: "Setrika Saja",
-    status: "Pending",
-    weight: 2,
-    price: 10000,
-    date: "2023-10-26",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Perumahan Indah Blok C-5",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD004",
-    customer: "Dewi Lestari",
-    service: "Cuci Kering",
-    status: "Completed",
-    weight: 4,
-    price: 20000,
-    date: "2023-10-27",
-    paymentMethod: "QRIS",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD005",
-    customer: "Andi Pratama",
-    service: "Cuci Setrika",
-    status: "Completed",
-    weight: 6,
-    price: 35000,
-    date: "2023-10-24",
-    paymentMethod: "Tunai",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD006",
-    customer: "Rina Wijaya",
-    service: "Cuci Kering",
-    status: "Completed",
-    weight: 2.5,
-    price: 12500,
-    date: "2023-10-23",
-    paymentMethod: "QRIS",
-    orderType: "Pickup",
-    location: "Apartemen Sejahtera Blok B",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD007",
-    customer: "Fajar Nugraha",
-    service: "Cuci Satuan",
-    status: "Pending",
-    weight: 0.5,
-    price: 25000,
-    date: "2023-10-28",
-    paymentMethod: "Tunai",
-    orderType: "Pickup",
-    location: "Jl. Mawar No. 5",
-    clothingType: "Gaun Pesta",
-  },
-];
+{
+  id: "ORD001",
+  customer: "Budi Santoso",
+  service: "Cuci Kering",
+  status: "Pending",
+  weight: 3,
+  price: 15000,
+  date: "2023-10-26",
+  paymentMethod: "QRIS",
+  orderType: "Pickup",
+  location: "Jl. Merdeka No. 10",
+  clothingType: undefined
+},
+{
+  id: "ORD002",
+  customer: "Siti Aminah",
+  service: "Cuci Setrika",
+  status: "In Progress",
+  weight: 5,
+  price: 30000,
+  date: "2023-10-25",
+  paymentMethod: "Debit",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD003",
+  customer: "Joko Susilo",
+  service: "Setrika Saja",
+  status: "Pending",
+  weight: 2,
+  price: 10000,
+  date: "2023-10-26",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Perumahan Indah Blok C-5",
+  clothingType: undefined
+},
+{
+  id: "ORD004",
+  customer: "Dewi Lestari",
+  service: "Cuci Kering",
+  status: "Completed",
+  weight: 4,
+  price: 20000,
+  date: "2023-10-27",
+  paymentMethod: "QRIS",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD005",
+  customer: "Andi Pratama",
+  service: "Cuci Setrika",
+  status: "Completed",
+  weight: 6,
+  price: 35000,
+  date: "2023-10-24",
+  paymentMethod: "Tunai",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD006",
+  customer: "Rina Wijaya",
+  service: "Cuci Kering",
+  status: "Completed",
+  weight: 2.5,
+  price: 12500,
+  date: "2023-10-23",
+  paymentMethod: "QRIS",
+  orderType: "Pickup",
+  location: "Apartemen Sejahtera Blok B",
+  clothingType: undefined
+},
+{
+  id: "ORD007",
+  customer: "Fajar Nugraha",
+  service: "Cuci Satuan",
+  status: "Pending",
+  weight: 0.5,
+  price: 25000,
+  date: "2023-10-28",
+  paymentMethod: "Tunai",
+  orderType: "Pickup",
+  location: "Jl. Mawar No. 5",
+  clothingType: "Gaun Pesta"
+}];
+
 
 const AdminDashboard = () => {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
@@ -130,9 +130,9 @@ const AdminDashboard = () => {
 
   const handleUpdateOrderStatus = (orderId: string, newStatus: Order["status"]) => {
     setOrders((prevOrders) =>
-      prevOrders.map((order) =>
-        order.id === orderId ? { ...order, status: newStatus } : order
-      )
+    prevOrders.map((order) =>
+    order.id === orderId ? { ...order, status: newStatus } : order
+    )
     );
     toast.success(`Status pesanan ${orderId} berhasil diperbarui menjadi ${newStatus}.`);
   };
@@ -140,13 +140,13 @@ const AdminDashboard = () => {
   // Calculate summary data
   const totalOrders = orders.length;
   const pendingOrders = orders.filter(
-    (order) => order.status === "Pending",
+    (order) => order.status === "Pending"
   ).length;
   const inProgressOrders = orders.filter(
-    (order) => order.status === "In Progress",
+    (order) => order.status === "In Progress"
   ).length;
   const completedOrders = orders.filter(
-    (order) => order.status === "Completed",
+    (order) => order.status === "Completed"
   ).length;
   const totalRevenue = orders.reduce((sum, order) => sum + order.price, 0);
 
@@ -158,8 +158,8 @@ const AdminDashboard = () => {
             variant="outline"
             size="icon"
             className="h-8 w-8"
-            onClick={() => navigate(-1)}
-          >
+            onClick={() => navigate(-1)}>
+
             <ChevronLeft className="h-4 w-4" />
             <span className="sr-only">Kembali</span>
           </Button>
@@ -251,8 +251,8 @@ const AdminDashboard = () => {
           </div>
         </main>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default AdminDashboard;

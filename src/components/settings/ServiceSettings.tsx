@@ -30,8 +30,8 @@ const ServiceSettings: React.FC = () => {
           <Label htmlFor="cuci-satuan">Cuci Satuan (Extra Handling)</Label>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>);
+
 };
 
 export default ServiceSettings;

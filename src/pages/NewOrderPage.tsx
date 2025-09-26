@@ -55,8 +55,8 @@ const NewOrderPage: React.FC = () => {
                       placeholder="Masukkan nama pelanggan"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      required
-                    />
+                      required />
+
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">No. Telepon</Label>
@@ -65,8 +65,8 @@ const NewOrderPage: React.FC = () => {
                       placeholder="08xxxxxxxxxx"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      required
-                    />
+                      required />
+
                   </div>
                 </div>
 
@@ -93,8 +93,8 @@ const NewOrderPage: React.FC = () => {
                         <Button
                           type="button"
                           variant="outline"
-                          className="w-full justify-start text-left font-normal"
-                        >
+                          className="w-full justify-start text-left font-normal">
+
                           <CalendarIcon className="mr-2 h-4 w-4" />
                           {pickupDate ? format(pickupDate, "PPP") : <span>Pilih tanggal</span>}
                         </Button>
@@ -104,8 +104,8 @@ const NewOrderPage: React.FC = () => {
                           mode="single"
                           selected={pickupDate}
                           onSelect={setPickupDate}
-                          initialFocus
-                        />
+                          initialFocus />
+
                       </PopoverContent>
                     </Popover>
                   </div>
@@ -129,8 +129,8 @@ const NewOrderPage: React.FC = () => {
           </Card>
         </main>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default NewOrderPage;

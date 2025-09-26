@@ -11,42 +11,42 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+  FormMessage } from
+"@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  SelectValue } from
+"@/components/ui/select";
 import { toast } from "sonner";
 
 const formSchema = z.object({
   customerName: z.string().min(2, {
-    message: "Nama pelanggan harus minimal 2 karakter.",
+    message: "Nama pelanggan harus minimal 2 karakter."
   }),
   serviceType: z.enum(["Cuci Kering", "Cuci Setrika", "Setrika Saja", "Cuci Satuan"], { // Menambahkan 'Cuci Satuan'
-    required_error: "Pilih jenis layanan.",
+    required_error: "Pilih jenis layanan."
   }),
   weight: z.coerce.number().min(0.1, {
-    message: "Berat harus lebih dari 0 kg.",
+    message: "Berat harus lebih dari 0 kg."
   }),
   price: z.coerce.number().min(1000, {
-    message: "Harga harus minimal Rp 1.000.",
+    message: "Harga harus minimal Rp 1.000."
   }),
   orderType: z.enum(["Pickup", "Delivery"], {
-    required_error: "Pilih jenis pesanan.",
+    required_error: "Pilih jenis pesanan."
   }),
   location: z.string().optional(),
-  clothingType: z.string().optional(), // Menambahkan bidang jenis pakaian
+  clothingType: z.string().optional() // Menambahkan bidang jenis pakaian
 }).superRefine((data, ctx) => {
   if (data.orderType === "Pickup" && (!data.location || data.location.trim() === "")) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: "Lokasi penjemputan wajib diisi untuk pesanan Pickup.",
-      path: ["location"],
+      path: ["location"]
     });
   }
   // Validasi kondisional: jika serviceType adalah "Cuci Satuan", maka clothingType wajib diisi
@@ -54,7 +54,7 @@ const formSchema = z.object({
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: "Jenis pakaian wajib diisi untuk layanan Cuci Satuan.",
-      path: ["clothingType"],
+      path: ["clothingType"]
     });
   }
 });
@@ -77,7 +77,7 @@ type CreateOrderFormProps = {
 
 const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
   onOrderCreated,
-  onClose,
+  onClose
 }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -88,8 +88,8 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
       price: 0,
       orderType: "Pickup",
       location: "",
-      clothingType: "", // Default value for new field
-    },
+      clothingType: "" // Default value for new field
+    }
   });
 
   const orderType = form.watch("orderType");
@@ -97,9 +97,9 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     const newOrder = {
-      id: `ORD${Math.floor(Math.random() * 10000)
-        .toString()
-        .padStart(3, "0")}`,
+      id: `ORD${Math.floor(Math.random() * 10000).
+      toString().
+      padStart(3, "0")}`,
       customer: values.customerName,
       service: values.serviceType,
       status: "Pending",
@@ -108,7 +108,7 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
       date: new Date().toISOString().split("T")[0],
       orderType: values.orderType,
       location: values.orderType === "Pickup" ? values.location : undefined,
-      clothingType: values.serviceType === "Cuci Satuan" ? values.clothingType : undefined, // Hanya sertakan jenis pakaian jika Cuci Satuan
+      clothingType: values.serviceType === "Cuci Satuan" ? values.clothingType : undefined // Hanya sertakan jenis pakaian jika Cuci Satuan
     };
     onOrderCreated(newOrder);
     toast.success("Pesanan baru berhasil ditambahkan!");
@@ -121,21 +121,21 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
         <FormField
           control={form.control}
           name="customerName"
-          render={({ field }) => (
-            <FormItem>
+          render={({ field }) =>
+          <FormItem>
               <FormLabel>Nama Pelanggan</FormLabel>
               <FormControl>
                 <Input placeholder="Masukkan nama pelanggan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )}
-        />
+          } />
+
         <FormField
           control={form.control}
           name="serviceType"
-          render={({ field }) => (
-            <FormItem>
+          render={({ field }) =>
+          <FormItem>
               <FormLabel>Jenis Layanan</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
@@ -152,54 +152,54 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
               </Select>
               <FormMessage />
             </FormItem>
-          )}
-        />
-        {serviceType === "Cuci Satuan" && ( // Bidang kondisional untuk jenis pakaian
-          <FormField
-            control={form.control}
-            name="clothingType"
-            render={({ field }) => (
-              <FormItem>
+          } />
+
+        {serviceType === "Cuci Satuan" && // Bidang kondisional untuk jenis pakaian
+        <FormField
+          control={form.control}
+          name="clothingType"
+          render={({ field }) =>
+          <FormItem>
                 <FormLabel>Jenis Pakaian</FormLabel>
                 <FormControl>
                   <Input placeholder="Contoh: Gaun Pesta, Jas, Selimut" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
-            )}
-          />
-        )}
+          } />
+
+        }
         <FormField
           control={form.control}
           name="weight"
-          render={({ field }) => (
-            <FormItem>
+          render={({ field }) =>
+          <FormItem>
               <FormLabel>Berat (kg)</FormLabel>
               <FormControl>
                 <Input type="number" step="0.1" placeholder="0.0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )}
-        />
+          } />
+
         <FormField
           control={form.control}
           name="price"
-          render={({ field }) => (
-            <FormItem>
+          render={({ field }) =>
+          <FormItem>
               <FormLabel>Harga (Rp)</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
-          )}
-        />
+          } />
+
         <FormField
           control={form.control}
           name="orderType"
-          render={({ field }) => (
-            <FormItem>
+          render={({ field }) =>
+          <FormItem>
               <FormLabel>Jenis Pesanan</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
@@ -214,29 +214,29 @@ const CreateOrderForm: React.FC<CreateOrderFormProps> = ({
               </Select>
               <FormMessage />
             </FormItem>
-          )}
-        />
-        {orderType === "Pickup" && (
-          <FormField
-            control={form.control}
-            name="location"
-            render={({ field }) => (
-              <FormItem>
+          } />
+
+        {orderType === "Pickup" &&
+        <FormField
+          control={form.control}
+          name="location"
+          render={({ field }) =>
+          <FormItem>
                 <FormLabel>Lokasi Penjemputan</FormLabel>
                 <FormControl>
                   <Input placeholder="Masukkan lokasi penjemputan" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
-            )}
-          />
-        )}
+          } />
+
+        }
         <Button type="submit" className="w-full">
           Tambah Pesanan
         </Button>
       </form>
-    </Form>
-  );
+    </Form>);
+
 };
 
 export default CreateOrderForm;

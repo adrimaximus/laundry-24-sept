@@ -7,16 +7,16 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-  CardDescription,
-} from "@/components/ui/card";
+  CardDescription } from
+"@/components/ui/card";
 import {
   Table,
   TableHeader,
   TableRow,
   TableHead,
   TableBody,
-  TableCell,
-} from "@/components/ui/table";
+  TableCell } from
+"@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Settings } from "lucide-react"; // Import Settings icon
 import { Button } from "@/components/ui/button"; // Import Button
@@ -38,72 +38,72 @@ type Order = {
 
 // Contoh data riwayat pesanan
 const historicalOrders: Order[] = [
-  {
-    id: "ORD005",
-    customer: "Andi Pratama",
-    service: "Cuci Setrika",
-    status: "Completed",
-    weight: 6,
-    price: 35000,
-    date: "2023-10-24",
-    paymentMethod: "Tunai",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD006",
-    customer: "Rina Wijaya",
-    service: "Cuci Kering",
-    status: "Completed",
-    weight: 2.5,
-    price: 12500,
-    date: "2023-10-23",
-    paymentMethod: "QRIS",
-    orderType: "Pickup",
-    location: "Apartemen Sejahtera Blok B",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD007",
-    customer: "Bambang",
-    service: "Setrika Saja",
-    status: "Completed",
-    weight: 3,
-    price: 15000,
-    date: "2023-10-22",
-    paymentMethod: "Debit",
-    orderType: "Pickup",
-    location: "Kantor Pusat",
-    clothingType: undefined,
-  },
-  {
-    id: "ORD008",
-    customer: "Citra Dewi",
-    service: "Cuci Setrika",
-    status: "Completed",
-    weight: 4,
-    price: 25000,
-    date: "2023-10-21",
-    paymentMethod: "Tunai",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: undefined,
-  },
-  {
-    id: "ORD009",
-    customer: "Eko Prasetyo",
-    service: "Cuci Satuan",
-    status: "Completed",
-    weight: 0.8,
-    price: 30000,
-    date: "2023-10-20",
-    paymentMethod: "QRIS",
-    orderType: "Delivery",
-    location: undefined,
-    clothingType: "Jas Pria",
-  },
-];
+{
+  id: "ORD005",
+  customer: "Andi Pratama",
+  service: "Cuci Setrika",
+  status: "Completed",
+  weight: 6,
+  price: 35000,
+  date: "2023-10-24",
+  paymentMethod: "Tunai",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD006",
+  customer: "Rina Wijaya",
+  service: "Cuci Kering",
+  status: "Completed",
+  weight: 2.5,
+  price: 12500,
+  date: "2023-10-23",
+  paymentMethod: "QRIS",
+  orderType: "Pickup",
+  location: "Apartemen Sejahtera Blok B",
+  clothingType: undefined
+},
+{
+  id: "ORD007",
+  customer: "Bambang",
+  service: "Setrika Saja",
+  status: "Completed",
+  weight: 3,
+  price: 15000,
+  date: "2023-10-22",
+  paymentMethod: "Debit",
+  orderType: "Pickup",
+  location: "Kantor Pusat",
+  clothingType: undefined
+},
+{
+  id: "ORD008",
+  customer: "Citra Dewi",
+  service: "Cuci Setrika",
+  status: "Completed",
+  weight: 4,
+  price: 25000,
+  date: "2023-10-21",
+  paymentMethod: "Tunai",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: undefined
+},
+{
+  id: "ORD009",
+  customer: "Eko Prasetyo",
+  service: "Cuci Satuan",
+  status: "Completed",
+  weight: 0.8,
+  price: 30000,
+  date: "2023-10-20",
+  paymentMethod: "QRIS",
+  orderType: "Delivery",
+  location: undefined,
+  clothingType: "Jas Pria"
+}];
+
 
 const History = () => {
   const getStatusVariant = (status: string) => {
@@ -161,8 +161,8 @@ const History = () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {historicalOrders.map((order) => (
-                    <TableRow key={order.id}>
+                  {historicalOrders.map((order) =>
+                  <TableRow key={order.id}>
                       <TableCell className="font-medium">{order.id}</TableCell>
                       <TableCell>{order.customer}</TableCell>
                       <TableCell>{order.service}</TableCell>
@@ -185,15 +185,15 @@ const History = () => {
                         {order.date}
                       </TableCell>
                     </TableRow>
-                  ))}
+                  )}
                 </TableBody>
               </Table>
             </CardContent>
           </Card>
         </main>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default History;
