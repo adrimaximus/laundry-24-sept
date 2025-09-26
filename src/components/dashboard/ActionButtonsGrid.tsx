@@ -1,4 +1,4 @@
-"use client";
+use client;
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -36,8 +36,8 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
           Pengaturan
         </Link>
       </Button>
-    </div>);
-
+    </div>
+  );
 };
 
 export default ActionButtonsGrid;
