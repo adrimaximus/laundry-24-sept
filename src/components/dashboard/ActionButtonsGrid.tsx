@@ -37,7 +37,6 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
         </Link>
       </Button>
     </div>);
-
 };
 
 export default ActionButtonsGrid;
