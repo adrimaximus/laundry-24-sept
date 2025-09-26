@@ -18,7 +18,7 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
           Tambah Pesanan
         </Link>
       </Button>
-      <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-white border border-gray-300 text-gray-800 hover:bg-gray-50">
+      <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-blue-500 border border-blue-600 text-white hover:bg-blue-600">
         <Link to="/history">
           <History className="h-6 w-6 mb-1" />
           Riwayat Pesanan
