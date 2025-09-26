@@ -1,11 +1,8 @@
-"use client";
+use client;
 import React from "react";
 // import AccountInfoCard from "@/components/dashboard/AccountInfoCard"; // Menghapus import AccountInfoCard
 import BranchSelector from "@/components/dashboard/BranchSelector";
 import ActionButtonsGrid from "@/components/dashboard/ActionButtonsGrid";
-import SalesOverviewCard from "@/components/dashboard/SalesOverviewCard";
-import RecentOrdersCard from "@/components/dashboard/RecentOrdersCard";
-import TopSellingProductsCard from "@/components/dashboard/TopSellingProductsCard";
 
 const IndexPage = () => {
   const handleAddOrderClick = () => {
@@ -21,17 +18,13 @@ const IndexPage = () => {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {/* <AccountInfoCard /> */} {/* Menghapus AccountInfoCard dari JSX */}
         <BranchSelector />
-        <SalesOverviewCard />
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <ActionButtonsGrid onAddOrderClick={handleAddOrderClick} />
-        <RecentOrdersCard />
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-        <TopSellingProductsCard />
       </div>
     </div>);
-
 };
 
 export default IndexPage;
