@@ -1,4 +1,3 @@
-use client;
 import React from "react";
 // import AccountInfoCard from "@/components/dashboard/AccountInfoCard"; // Menghapus import AccountInfoCard
 import BranchSelector from "@/components/dashboard/BranchSelector";
@@ -6,10 +5,20 @@ import ActionButtonsGrid from "@/components/dashboard/ActionButtonsGrid";
 
 const IndexPage = () => {
   const handleAddOrderClick = () => {
+
+    
+        
+          
+    
+
+        
+        Expand All
+    
+    @@ -21,14 +18,11 @@ const IndexPage = () => {
+  
     // Logika untuk menambah pesanan
     console.log("Tambah Pesanan clicked!");
   };
-
   return (
     <div className="flex-1 space-y-4 p-8 pt-6">
       <div className="flex items-center justify-between space-y-2">
@@ -25,6 +34,17 @@ const IndexPage = () => {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
       </div>
     </div>);
-};
 
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
+};
 export default IndexPage;
