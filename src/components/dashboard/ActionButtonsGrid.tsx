@@ -1,12 +1,11 @@
+"use client";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Plus, History, Settings, BarChart } from "lucide-react";
-
 interface ActionButtonsGridProps {
   onAddOrderClick: () => void;
 }
-
 const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }) => {
   return (
     <div className="grid grid-cols-2 gap-4">
@@ -14,6 +13,17 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
         <Link to="/orders/new" onClick={onAddOrderClick}>
           <Plus className="h-6 w-6 mb-1" />
           Tambah Pesanan
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
         </Link>
       </Button>
       <Button asChild className="w-full h-24 flex flex-col items-center justify-center text-lg font-semibold bg-blue-500 border border-blue-600 text-white hover:bg-blue-600">
@@ -36,5 +46,4 @@ const ActionButtonsGrid: React.FC<ActionButtonsGridProps> = ({ onAddOrderClick }
       </Button>
     </div>);
 };
-
 export default ActionButtonsGrid;
